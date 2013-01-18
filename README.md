@@ -1,12 +1,11 @@
 ======================================================================
       A N D R O I D   P R E B U I L T   T O O L C H A I N S
 ======================================================================
-          XDA=wedgess                        github=/garwedgess
-----------------------------------------------------------------------
-                       Thanks @ DooMLoRD
-----------------------------------------------------------------------
+- xda = wedgess
+- github = /garwedgess
+- Thanks @ DooMLoRD
 
-
+----------------------------------------------------------------------
 
 [1] arm-eabi-4.4.3
     GCC 4.4.3 toolchain from CyanogenMod repo
@@ -15,11 +14,14 @@
 [2] arm-eabi-linaro-4.6.2
     GCC Linaro 4.6.2 (2011.10) toolchain from DooMLoRD
 
-
+[3] arm-eabi-linaro-4.7.3
+    GCC Linaro 4.7.3 (2012.11) toolchain from my kitchen
 
 
 ==================================
      arm-eabi-linaro-4.6.2
+==================================
+   Using PACMan as an example:
 ==================================
 
 --------------
@@ -30,7 +32,7 @@ Instructions:
 * cd [pac-root]/prebuilts/gcc/linux-x86/arm
 * git clone git://github.com/garwedgess/toolchains
 * cd toolchains
-* cp -rf arm-eabi-linaro-4.7 [pac-root]/prebuilts/gcc/linux-x86/arm 
+* cp -rf arm-eabi-linaro-4.6.2 [pac-root]/prebuilts/gcc/linux-x86/arm 
 * cd [pac-root]/build
 
 
@@ -41,7 +43,43 @@ Instructions:
         case $ARCH in
             x86) toolchaindir=x86/i686-eabi-4.4.3/bin
                 ;;
-            arm) toolchaindir=arm/arm-eabi-linaro-4.7/bin
+            arm) toolchaindir=arm/arm-eabi-linaro-4.6.2/bin
+                ;;
+            
+
+###########
+   Done
+###########
+
+* Build PACMan as usual
+
+
+==================================
+     arm-eabi-linaro-4.7.3
+==================================
+   Using PACMan as an example:
+==================================
+
+--------------
+Instructions:
+--------------
+
+* Download the Android source code you wish to use.
+* cd [pac-root]/prebuilts/gcc/linux-x86/arm
+* git clone git://github.com/garwedgess/toolchains
+* cd toolchains
+* cp -rf arm-eabi-linaro-4.7.3 [pac-root]/prebuilts/gcc/linux-x86/arm 
+* cd [pac-root]/build
+
+
+* edit envsetup.sh to point to your new Linaro toolchain
+
+
+        export ARM_EABI_TOOLCHAIN=
+        case $ARCH in
+            x86) toolchaindir=x86/i686-eabi-4.4.3/bin
+                ;;
+            arm) toolchaindir=arm/arm-eabi-linaro-4.7.3/bin
                 ;;
             
 
